@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Devops Demo App by School of Devops</title>
+		<title>Sysfoo Demo App by School of Devops</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,7 +23,7 @@
 						<div>
 						<nav>
 								<ul class="actions">
-										<li><a  class="button special">Devops Demo App</a></li>
+										<li><a  class="button special">Sysfoo App</a></li>
 									</ul>
 								
 						</nav>

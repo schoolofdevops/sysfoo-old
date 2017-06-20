@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Demo App</title>
+		<title>Devops Demo App by School of Devops</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,23 +23,23 @@
 						<div>
 						<nav>
 								<ul class="actions">
-										<li><a  class="button special">Demo App</a></li>
+										<li><a  class="button special">Devops Demo App</a></li>
 									</ul>
 								
 						</nav>
 							</div>
 						<div class="content">
 							<div class="inner">
-								<h1>School of Devops</h1>
+								<h2>version 0.0.1 </h2>
+								<h1>Devops Demo</h1>
 								<p><h4><% out.println("Your IP address is " + request.getRemoteAddr()); %></h4>
 								<h4><% out.println("Your Host Name is " + request.getServerName()); %></h4>
-								<h4>version 0.0.1 </h5>
 								<h4>Today's date: <%= (new java.util.Date()).toLocaleString()%></h4>
 							</div>
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#about">Gaurav Shah</a></li>
+								<li><a href="#about">School of Devops</a></li>
 							</ul>
 						</nav>
 					</header>

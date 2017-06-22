@@ -30,7 +30,7 @@
 							</div>
 						<div class="content">
 							<div class="inner">
-								<h2>version 0.0.1 </h2>
+								<h2>version 0.0.2 </h2>
 								<h1>Devops Demo</h1>
 								<p><h4><% out.println("Your IP address is " + request.getRemoteAddr()); %></h4>
 								<h4><% out.println("Your Host Name is " + request.getServerName()); %></h4>

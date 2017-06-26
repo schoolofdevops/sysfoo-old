@@ -32,6 +32,7 @@
 							<div class="inner">
 								<h1>version 0.0.1 </h1>
 								<h2>SYSTEM INFO</h2>
+								<a  class="button special"><% out.println(request.getLocalAddr()); %></a>
 								<p>
 								<h3><% out.println("IP address  :  " + request.getLocalAddr()); %></h3>
 								<h4><% out.println("PORT        :  " + request.getLocalPort()); %></h4>

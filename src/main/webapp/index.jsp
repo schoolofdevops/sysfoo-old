@@ -23,18 +23,19 @@
 						<div>
 						<nav>
 								<ul class="actions">
-										<li><a  class="button special">Sysfoo App</a></li>
+										<li><a  class="button special">Sysfoo</a></li>
 									</ul>
 
 						</nav>
 							</div>
 						<div class="content">
 							<div class="inner">
-								<h1>Devops Demo</h1>
-								<h2>version 0.0.1 </h2>
-								<p><h4><% out.println("Your IP address is " + request.getLocalAddr()); %></h4>
-								<h4><% out.println("This server is listening on " + request.getLocalPort()); %></h4>
-								<h4><% out.println("Your Host Name is " + request.getLocalName()); %></h4>
+								<h1>version 0.0.1 </h1>
+								<h1>SYSTEM INFO</h1>
+								<p>
+								<h4><% out.println("IP address  :  " + request.getLocalAddr()); %></h4>
+								<h4><% out.println("PORT        :  " + request.getLocalPort()); %></h4>
+								<h4><% out.println("HOSTNAME    :  " + request.getLocalName()); %></h4>
 								<h4>Today's date: <%= (new java.util.Date()).toLocaleString()%></h4>
 							</div>
 						</div>
@@ -52,8 +53,8 @@
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+								<span class="image main"><img src="images/sodc_banner.jpg" alt="" /></span>
+								<p>School of Devops is a leading provider of devops trainings and offers variety of courses which focus on Infrastrucrture as a Code, Container and Docker, Continuous Delivery, Cloud.</p>
 							</article>
 					</div>
 

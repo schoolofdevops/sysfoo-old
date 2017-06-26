@@ -31,9 +31,9 @@
 						<div class="content">
 							<div class="inner">
 								<h1>version 0.0.1 </h1>
-								<h1>SYSTEM INFO</h1>
+								<h2>SYSTEM INFO</h2>
 								<p>
-								<h4><% out.println("IP address  :  " + request.getLocalAddr()); %></h4>
+								<h3><% out.println("IP address  :  " + request.getLocalAddr()); %></h3>
 								<h4><% out.println("PORT        :  " + request.getLocalPort()); %></h4>
 								<h4><% out.println("HOSTNAME    :  " + request.getLocalName()); %></h4>
 								<h4>Today's date: <%= (new java.util.Date()).toLocaleString()%></h4>
@@ -54,7 +54,7 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<span class="image main"><img src="images/sodc_banner.jpg" alt="" /></span>
-								<p>School of Devops is a leading provider of devops trainings and offers variety of courses which focus on Infrastrucrture as a Code, Container and Docker, Continuous Delivery, Cloud.</p>
+								<p>School of Devops is a leading provider of devops trainings and offers variety of courses which focus on Infrastrucrture as a Code, Container and Docker, Continuous Delivery, Cloud. To learn more visit http://www.schoolofdevops.com.</p>
 							</article>
 					</div>
 

@@ -25,15 +25,16 @@
 								<ul class="actions">
 										<li><a  class="button special">Sysfoo App</a></li>
 									</ul>
-								
+
 						</nav>
 							</div>
 						<div class="content">
 							<div class="inner">
-								<h2>version 0.0.2 </h2>
 								<h1>Devops Demo</h1>
-								<p><h4><% out.println("Your IP address is " + request.getRemoteAddr()); %></h4>
-								<h4><% out.println("Your Host Name is " + request.getServerName()); %></h4>
+								<h2>version 0.0.1 </h2>
+								<p><h4><% out.println("Your IP address is " + request.getLocalAddr()); %></h4>
+								<h4><% out.println("This server is listening on " + request.getLocalPort()); %></h4>
+								<h4><% out.println("Your Host Name is " + request.getLocalName()); %></h4>
 								<h4>Today's date: <%= (new java.util.Date()).toLocaleString()%></h4>
 							</div>
 						</div>
@@ -47,7 +48,7 @@
 				<!-- Main -->
 					<div id="main">
 
-						
+
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">About</h2>

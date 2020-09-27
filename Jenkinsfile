@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'docker pull maven:3.6.3-openjdk-15'
+    }
+
+  }
   stages {
     stage('build') {
       steps {

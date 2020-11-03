@@ -1,23 +1,31 @@
 pipeline {
-  agent any
-  stages{
-   stage('build'){
-      steps{
+  agent {
+    docker {
+      image 'maven:3.6.3-jdk-11-slim'
+    }
+
+  }
+  stages {
+    stage('build') {
+      steps {
         sh 'mvn compile'
       }
-   }
-   stage('test'){
-      steps{
+    }
+
+    stage('test') {
+      steps {
         sh 'mvn clean test'
       }
-   }
-   stage('package'){
-      steps{
+    }
+
+    stage('package') {
+      steps {
         sh 'mvn package -DskipTests'
       }
-   }
+    }
+
   }
-  tools{
+  tools {
     maven 'Maven 3.6.3'
   }
 }

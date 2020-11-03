@@ -10,7 +10,6 @@ pipeline {
     stage('test') {
       steps {
         sh 'mvn clean test'
-        timeout(time: 10)
       }
     }
 

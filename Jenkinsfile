@@ -20,7 +20,7 @@ pipeline {
       steps {
         echo 'running package'
         sh 'mvn package -DskipTests'
-        archiveArtifacts(artifacts: 'target/*.war', allowEmptyArchive: true)
+        archiveArtifacts 'target/*.war'
       }
     }
 

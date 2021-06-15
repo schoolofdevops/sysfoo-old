@@ -20,6 +20,7 @@ pipeline {
         echo 'packaging app to generate artifacts'
         sh 'mvn package -DskipTests'
         archiveArtifacts 'target/*.war'
+        archiveArtifacts 'target/*.war'
       }
     }
 

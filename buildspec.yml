@@ -16,3 +16,4 @@ artifacts:
   files:
     - '**/*'     
   name: my-webapps-artifacts
+ discard-paths: yes

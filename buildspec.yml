@@ -14,6 +14,8 @@ phases:
       - mvn package
 artifacts:
   files:
-    - target/sysfoo.war    
-  name: my-webapps-artifacts
+    - target/sysfoo.war 
+    - scripts/start-process.sh
+    - scripts/stop-process.sh
+  discard-paths: yes
 

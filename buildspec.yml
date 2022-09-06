@@ -15,7 +15,7 @@ phases:
 artifacts:
   files:
     - target/sysfoo.war 
+    - appspec.yml
     - scripts/start-process.sh
     - scripts/stop-process.sh
-  discard-paths: yes
-
+  

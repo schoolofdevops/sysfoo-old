@@ -1,5 +1,7 @@
 version: 0.0
+
 os: linux
+
 files:
-  - source: **/*.war
+  - source: /sysfoo.war
     destination: /tmp

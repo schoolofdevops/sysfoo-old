@@ -3,7 +3,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: /sysfoo.war
+  - source: target/sysfoo.war
     destination: /tmp
 
 hooks:

@@ -8,10 +8,10 @@ files:
 
 hooks:
   ApplicationStop:
-    - location: stop-process.sh
+    - location: scripts/stop-process.sh
       timeout: 180
       runas: root
   ApplicationStart:
-    - location: start-process.sh
+    - location: scripts/start-process.sh
       timeout: 180
       runas: root

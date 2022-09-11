@@ -7,11 +7,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn test 
+      - mvn clean && mvn test 
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package
+      - mvn package 
 artifacts:
   files:
     - '**/*'     

@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: Dev
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -19,25 +20,15 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
-  
-  deploy:
-    name: Deploy to EC2 on master branch push
-    runs-on: ubuntu-latest
-    environment: Dev
-
-    steps:
-      - name: Checkout the files
-        uses: actions/checkout@v2
-
-      - name: Deploy to Server 1
-        uses: easingthemes/ssh-deploy@v2.1.1  
+   
+    - name: Deploy to Server 1
+      uses: easingthemes/ssh-deploy@v2.1.1  
         
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}   
-          ARGS: "-rltgoDzvO"
-          SOURCE: "/"
-          REMOTE_HOST: ${{ secrets.HOST_DNS }}
-          REMOTE_USER: ${{ secrets.USERNAME }}
-          TARGET: ${{ secrets.TARGET_DIR }}
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}   
+        ARGS: "-rltgoDzvO"
+        SOURCE: "/"
+        REMOTE_HOST: ${{ secrets.HOST_DNS }}
+        REMOTE_USER: ${{ secrets.USERNAME }}
+        TARGET: ${{ secrets.TARGET_DIR }}
    

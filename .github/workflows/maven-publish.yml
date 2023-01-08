@@ -24,20 +24,4 @@ jobs:
   deploy:
       runs-on: ubuntu-latest
 
-    steps:
-    
-      - name: Checkout the files
-        uses: actions/checkout@v2
-
-      - name: Deploy to Server 1
-        uses: easingthemes/ssh-deploy@main
-    
-    
-     - name: Hello world action
-       with: # Set the secret as an input      
-
-       env:
-         SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-         REMOTE_HOST: ${{ secrets.HOST_DNS }}
-         REMOTE_USER: ${{ secrets.USERNAME }}
-         TARGET: ${{ secrets.TARGET_DIR }}
+     

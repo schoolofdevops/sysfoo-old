@@ -34,8 +34,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.1.1  
         
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
-          ARGS: "-rlgoDzvc -i --delete"
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}     
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}

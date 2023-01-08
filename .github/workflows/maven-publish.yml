@@ -32,6 +32,8 @@ jobs:
 
       - name: Deploy to Server 1
         uses: easingthemes/ssh-deploy@main
+      - name: Install OpenSSH
+        run: apt-get update && apt-get install -y openssh-client=8.9p1-3
         
 
         

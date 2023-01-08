@@ -31,11 +31,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy to Server 1
-        uses: easingthemes/ssh-deploy@main
-      - name: Check OpenSSH version
-        run: ssh -V
-        
-
+        uses: easingthemes/ssh-deploy@v2.1.1  
         
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}

@@ -31,5 +31,6 @@ jobs:
         SOURCE: "/"
         REMOTE_HOST: ${{ secrets.HOST_DNS }}
         REMOTE_USER: ${{ secrets.USERNAME }}
+        REMOTE_PORT: 22 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa
         TARGET: ${{ secrets.TARGET_DIR }}
    

@@ -25,6 +25,9 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: rsync
       run: rsync --version
+ 
+    - uses: GuillaumeFalourd/setup-rsync@v1.1
+    - run: rsync --version
 
    
     - name: Deploy to Server 1

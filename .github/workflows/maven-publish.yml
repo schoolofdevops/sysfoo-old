@@ -28,15 +28,14 @@ jobs:
       with:
           token: '${{ github.token }}'
           allowUpdates: true
-          artifacts: "${{ github.workspace }}/target/*.war"   
-    - name: Rollback Release
-      run: mvn rollback.release
-        
+          artifacts: "${{ github.workspace }}/target/*.war"
+    - name: copying artifacts to tomcat
+      run: cp -R ${{ github.workspace }}/target/*.war /http://54.78.228.30:8080/webapps
           
-    - name: Publish Service
-      run: mvn -f pom.xml -B clean install release:prepare release:perform
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   # - name: Publish Service
+      #run: mvn -f pom.xml -B clean install release:prepare release:perform
+      #env:
+      #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     
 

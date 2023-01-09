@@ -33,7 +33,7 @@ jobs:
         
           
     - name: Publish Service
-      run: mvn -f pom.xml -B clean release:prepare 
+      run: mvn -f pom.xml -B clean release:prepare release:perform
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         tomcat_url: "http://54.78.228.30:8080/manager/html" 

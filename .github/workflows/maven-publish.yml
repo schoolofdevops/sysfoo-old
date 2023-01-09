@@ -33,7 +33,7 @@ jobs:
       with:
         name: artifacts
     - name: Deploy WAR to Tomcat
-      run: mvn -B clean release:prepare release:perform -Dmaven.tomcat.url=http://54.78.228.30:8080/manager/text -Dmaven.tomcat.username=admin -Dmaven.tomcat.password=admin_password
+      run: mvn -B clean release:prepare release:perform -Dmaven.tomcat.path=/opt/tomcat
 
 
 

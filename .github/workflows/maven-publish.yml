@@ -28,12 +28,14 @@ jobs:
       with:
           token: '${{ github.token }}'
           allowUpdates: true
-          artifacts: "${{ github.workspace }}/target/*.war"   
+          artifacts: "${{ github.workspace }}/target/*.war" 
+          
         
           
     - name: Publish Service
       run: mvn -f pom.xml -B clean release:prepare release:perform -Dusername=github -Dpassword=${GITHUB_TOKEN}
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         tomcat_url: "http://54.78.228.30:8080/manager/html" 
         username: "admin"
         password: "admin_password"

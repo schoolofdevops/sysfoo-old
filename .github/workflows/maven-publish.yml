@@ -24,10 +24,23 @@ jobs:
     - uses: chrnorm/deployment-action@v2
       name: Create GitHub deployment
       id: deployment
+
       with:
           token: '${{ github.token }}'
-          environment-url: http://54.78.228.30:8080/manager/html
+          allowUpdates: true
+          artifacts: "${{ github.workspace }}/target/*.war"        
           
+          
+    - name: Publish to the Maven Central Repository
+      run: |
+          mvn \
+            --no-transfer-progress \
+            --batch-mode \
+            deploy
+      env:
+          environment-url: http://54.78.228.30:8080/manager/html
+          username: admin
+          password: admin_password
 
       
       

@@ -33,7 +33,10 @@ jobs:
       with:
         name: artifacts
     - name: Stop Tomcat   
-      run: sudo -i && /opt/tomcat/apache-tomcat-10.1.4/bin/shutdown.sh
+      run: |
+        sudo -i 
+        cd /opt/tomcat/apache-tomcat-10.1.4/bin
+        ./shutdown.sh
     - name: Delete old artifacts
       run: rm -rf /opt/tomcat/apache-tomcat-10.1.4/webapps/*
     - name: Copy new artifacts

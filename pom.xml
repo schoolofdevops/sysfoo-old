@@ -10,7 +10,7 @@
       <repository>
             <id>corp1</id>
             <name>release1</name>
-            <url>https://github.com/anushamadhala678/sysfoo.git</url>
+            <url>http://54.78.228.30:8080/manager/html</url>
             
       </repository>
    </distributionManagement>

@@ -8,7 +8,6 @@
   <url>http://maven.apache.org</url> 
   <scm>
       <developerConnection>scm:git:https://github.com/anushamadhala678/sysfoo.git</developerConnection>  
-      <developerConnection>scm:${release-scm}</developerConnection>
       <tag>sysfoo-0.0.25</tag>
   </scm>
   

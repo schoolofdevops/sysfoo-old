@@ -30,9 +30,10 @@ jobs:
     - name: Deploy to Server 1
       uses: AEnterprise/rsync-deploy@v1.0
         
-      with:
-        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
-        ARGS: "-rltgoDzvO -i"
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        SERVER_PORT: "22"
+        ARGS: "-avz --delete "
         SOURCE: "/"
         REMOTE_HOST: ${{ secrets.HOST_DNS }}
         REMOTE_USER: ${{ secrets.USERNAME }}

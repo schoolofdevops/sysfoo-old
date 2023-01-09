@@ -32,8 +32,8 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: artifacts
-    - name: Stop Tomcat
-      run: /opt/tomcat/apache-tomcat-10.1.4/bin/shutdown.sh
+    - name: Stop Tomcat   
+      run: sudo -i && /opt/tomcat/apache-tomcat-10.1.4/bin/shutdown.sh
     - name: Delete old artifacts
       run: rm -rf /opt/tomcat/apache-tomcat-10.1.4/webapps/*
     - name: Copy new artifacts

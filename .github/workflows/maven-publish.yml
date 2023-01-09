@@ -26,9 +26,7 @@ jobs:
     - name: rsync
       run: rsync --version
  
-  
-    - name: Deploy to Server 1
-      uses: AEnterprise/rsync-deploy@v1.0
+
     - name: Deploy to sandbox via rsync
       uses: trendyminds/github-actions-rsync@master
       with:

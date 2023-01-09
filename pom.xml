@@ -14,6 +14,7 @@
   <distributionManagement>
         <repository>
             <id>sysfoo</id>
+            <uniqueVersion>true</uniqueVersion>
             <name>deploy to tomcat</name>
             <url>http://34.240.3.91:8080/manager</url>
         </repository>

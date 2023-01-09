@@ -15,7 +15,7 @@
         <repository>
             <id>sysfoo</id>
             <name>deploy to tomcat</name>
-            <url>http://34.240.3.91:8080/manager/text</url>
+            <url>http://34.240.3.91:8080/manager</url>
         </repository>
   </distributionManagement>
   <dependencies>

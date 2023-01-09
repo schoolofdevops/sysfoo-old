@@ -36,6 +36,7 @@ jobs:
       run: mvn -f pom.xml -B clean install release:prepare release:perform
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
 
         
         

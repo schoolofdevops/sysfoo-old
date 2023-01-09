@@ -3,7 +3,7 @@
   <groupId>com.sod</groupId>
   <artifactId>sysfoo</artifactId>
   <packaging>war</packaging>
-  <version>0.0.25</version>
+  <version>0.0.25-SNAPSHOT</version>
   <name>Sysfoo Demo App</name>
   <url>http://maven.apache.org</url> 
   <scm>
@@ -16,9 +16,6 @@
             <id>sysfoo</id>
             <name>deploy to tomcat</name>
             <url>http://34.240.3.91:8080/manager</url>
-            <snapshots>
-              <enabled>false</enabled>              
-            </snapshots>
         </repository>
   </distributionManagement>
   <dependencies>
@@ -36,17 +33,6 @@
   </dependencies>
   <build>
     <finalName>sysfoo</finalName>  
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>2.5.3</version>
-          <configuration>
-            <releaseProfiles>release</releaseProfiles>
-            <tagNameFormat>v@{project.version}</tagNameFormat>
-          </configuration>
-        </plugin>
-      </plugins> 
   </build> 
   
 </project>

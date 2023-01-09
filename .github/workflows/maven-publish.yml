@@ -41,6 +41,6 @@ jobs:
         ARGS: "-avz --delete "
         FOLDER: "/"
         SERVER_IP: "54.163.192.96"
-        USERNAME: "root"
+        USERNAME: "ubuntu"
         SERVER_DESTINATION: "/"
    

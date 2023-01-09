@@ -10,7 +10,7 @@
        <repository>
             <id>tomcatdeploy</id>
             <name>release1</name>
-            <url>http://54.78.228.30</url>
+            <url>http://54.78.228.30:8080</url>
        </repository>
       
    </distributionManagement>

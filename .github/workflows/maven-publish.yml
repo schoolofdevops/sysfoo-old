@@ -19,7 +19,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven
-      run: mvn -f pom.xml
+      run: mvn -f build pom.xml
       
     - uses: chrnorm/deployment-action@v2
       name: Create GitHub deployment

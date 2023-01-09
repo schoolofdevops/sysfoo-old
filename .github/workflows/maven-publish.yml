@@ -25,17 +25,6 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: rsync
       run: rsync --version
- 
 
-    - name: Deploy to sandbox via rsync
-      uses: AEnterprise/rsync-deploy@v1.0
+
         
-      env:
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        SERVER_PORT: "22"
-        ARGS: "-avz --delete "
-        FOLDER: "/"
-        SERVER_IP: "54.163.192.96"
-        USERNAME: "ubuntu"
-        SERVER_DESTINATION: "/"
-   

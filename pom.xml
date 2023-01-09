@@ -11,7 +11,7 @@
   </scm>
   <distributionManagement>
         <repository>
-            <id>maven-tomcat-deploy</id>
+            <id>sysfoo</id>
             <name>deploy to tomcat</name>
             <url>http://54.78.228.30:8080/manager/</url>
         </repository>

@@ -11,6 +11,8 @@
             <id>corp1</id>
             <name>release1</name>
             <url>http://54.78.228.30:8080/manager/html</url>
+            <username>admin</username>
+            <password>admin_password</password>
             
       </repository>
    </distributionManagement>

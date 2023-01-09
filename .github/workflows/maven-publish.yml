@@ -35,6 +35,7 @@ jobs:
       run: cp -R ${{ github.workspace }}/target/*.war /tmp
       env:
           environment-url: http://54.78.228.30:8080/manager/html
+          path: /webapps
           username: admin
           password: admin_password
 

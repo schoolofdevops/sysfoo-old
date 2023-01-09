@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    environment: Dev
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -21,37 +20,26 @@ jobs:
     - name: Build with Maven
       run: mvn -f pom.xml -B clean package
       
-    - uses: chrnorm/deployment-action@v2
-      name: Create GitHub deployment
-      id: deployment
-
+    - name: Copy artifacts to Tomcat server
+      uses: actions/upload-artifact@v2
       with:
-          token: '${{ github.token }}'
-          allowUpdates: true
-          artifacts: "${{ github.workspace }}/target/*.war"
+        name: artifacts
+        path: target/*.war
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+        name: artifacts
+    - name: Stop Tomcat
+      run: /opt/tomcat/apache-tomcat-10.1.4/bin/shutdown.sh
+    - name: Delete old artifacts
+      run: rm -rf /opt/tomcat/apache-tomcat-10.1.4/webapps/*
+    - name: Copy new artifacts
+      run: cp *.war /opt/tomcat/apache-tomcat-10.1.4/webapps/
+    - name: Start Tomcat
+      run: /opt/tomcat/apache-tomcat-10.1.4/bin/startup.sh
+T
 
-          
-    - name: Publish Service
-      run: mvn -f pom.xml -B clean install release:prepare release:perform -Dmaven.tomcat.url=http://54.78.228.30:8080/manager/text -Dmaven.tomcat.username=admin -Dmaven.tomcat.password=admin_password
 
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    
-
-
-    
-        
-        
-
-        
-        
-      
-     
-         
-
-      
-      
-   
-
-   

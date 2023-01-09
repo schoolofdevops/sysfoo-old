@@ -43,7 +43,11 @@ jobs:
     - name: Copy new artifacts
       run: cp *.war /opt/tomcat/apache-tomcat-10.1.4/webapps/
     - name: Start Tomcat
-      run: /opt/tomcat/apache-tomcat-10.1.4/bin/startup.sh
+      run: |
+        sudo -i 
+        cd /opt/tomcat/apache-tomcat-10.1.4/bin
+        pwd
+        ./startup.sh
 
 
 

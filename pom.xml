@@ -28,13 +28,4 @@
     <finalName>sysfoo</finalName>
   </build>
   
-  <distributionManagement>
-    <repository>
-      <uniqueVersion>false</uniqueVersion>
-      <id>maven-tomcat-war-deployment-server></id>
-      <url>http://54.78.228.30:8080/manager/html</url>
-      <username>admin</username>
-      <password>admin_password</password>      
-    </repository>   
-</distributionManagement>
 </project>

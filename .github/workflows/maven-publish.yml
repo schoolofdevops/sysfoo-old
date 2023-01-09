@@ -2,9 +2,9 @@ name: Maven Package
 
 on:
  push:
-  branches: [ master ]
+  branches: [ feature/tomcatdeploy ]
  pull_request:
-   branches: [ master ]
+   branches: [ feature/tomcatdeploy ]
 
 jobs:
   build:

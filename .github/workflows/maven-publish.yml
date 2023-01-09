@@ -32,7 +32,9 @@ jobs:
           
           
     - name: Publish to the Maven Central Repository
-      run: cp -R ${{ github.workspace }}/target/*.war /tmp
+      run: sudo cp -R ${{ github.workspace }}/target/*.war /opt/tomcat/apache-tomcat-10.1.4/webapps
+
+
       env:
           environment-url: http://54.78.228.30:8080/manager/html
           path: /webapps

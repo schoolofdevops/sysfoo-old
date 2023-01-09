@@ -35,7 +35,6 @@
       <url>http://54.78.228.30:8080/manager/html</url>
       <username>admin</username>
       <password>admin_password</password>      
-    </repository>
-    ...
+    </repository>   
 </distributionManagement>
 </project>

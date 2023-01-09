@@ -26,12 +26,16 @@ jobs:
     - name: rsync
       run: rsync --version
  
-    - uses: GuillaumeFalourd/setup-rsync@v1.1
-    - run: rsync --version
-
-   
+  
     - name: Deploy to Server 1
       uses: AEnterprise/rsync-deploy@v1.0
+    - name: Deploy to sandbox via rsync
+      uses: trendyminds/github-actions-rsync@master
+      with:
+          RSYNC_OPTIONS: -avzr --delete --exclude node_modules --exclude '.git*'
+          RSYNC_TARGET: /var/release
+          RSYNC_SOURCE: /src/public/
+      
         
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}

@@ -6,18 +6,19 @@
   <version>0.0.8-SNAPSHOT</version>
   <name>Sysfoo Demo App</name>
   <url>http://maven.apache.org</url>
+  <distributionManagement>
+      <repository>
+            <id>corp1</id>
+            <name>release1</name>
+            <url>https://github.com/anushamadhala678/sysfoo.git</url>
+            
+      </repository>
+   </distributionManagement>
   <scm>
       <developerConnection>scm:git:https://github.com/anushamadhala678/sysfoo.git</developerConnection>
       <tag>HEAD</tag>
     </scm>
-   <distributionManagement>
-       <repository>
-            <name>AWS CodeArtifacts Mosaic Framework Parent Maven Packages</name>
-            <url>http://54.78.228.30:8080/webapps/</url>
-        </repository>
-    </distributionManagement>
-
-  
+ 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>

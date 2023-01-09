@@ -23,13 +23,14 @@ jobs:
    
     - name: Upload Report
       uses: actions/upload-artifact@v2
+    
 
     - name: Upload S3    
       uses: shallwefootball/s3-upload-action@master
       id: S3
       with:
-          aws_key_id: AKIAV7C3DSPQJEX44XXJ
-          aws_secret_access_key: 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
+          aws_key_id: "AKIAV7C3DSPQJEX44XXJ"
+          aws_secret_access_key: "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"
           #aws_bucket: bucketName
           #source_dir: cypress/reports/Result   
     - name: Link To Report

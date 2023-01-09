@@ -32,7 +32,7 @@ jobs:
           
           
     - name: Publish to the Maven Central Repository
-      run: cp -R ${{ github.workspace }}/target/*.war /opt
+      run: cp -R ${{ github.workspace }}/target/*.war /tmp
       env:
           environment-url: http://54.78.228.30:8080/manager/html
           username: admin

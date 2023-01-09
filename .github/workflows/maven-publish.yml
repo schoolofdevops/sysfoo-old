@@ -19,7 +19,16 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven
-      run: cp -r /.war /opt
+      run: mvn -f pom.xml
+      
+    - uses: chrnorm/deployment-action@v2
+      name: Create GitHub deployment
+      id: deployment
+      with:
+          token: '${{ github.token }}'
+          environment-url: http://54.78.228.30:8080/manager/html
+          
+
       
       
    

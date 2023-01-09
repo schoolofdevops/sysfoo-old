@@ -40,6 +40,6 @@ jobs:
       run: cp *.war /opt/tomcat/apache-tomcat-10.1.4/webapps/
     - name: Start Tomcat
       run: /opt/tomcat/apache-tomcat-10.1.4/bin/startup.sh
-T
+
 
 

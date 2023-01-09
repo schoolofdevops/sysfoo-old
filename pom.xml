@@ -40,7 +40,7 @@
           <version>2.5.3</version>
           <configuration>
             <releaseProfiles>release</releaseProfiles>
-            <goals>clean install</goals>
+            <tagNameFormat>v@{project.version}</tagNameFormat>
           </configuration>
         </plugin>
       </plugins> 

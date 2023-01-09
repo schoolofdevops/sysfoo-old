@@ -17,8 +17,7 @@
             <name>deploy to tomcat</name>
             <url>http://34.240.3.91:8080/manager</url>
             <snapshots>
-              <enabled>true</enabled>
-              <updatePolicy>always</updatePolicy>
+              <enabled>false</enabled>              
             </snapshots>
         </repository>
   </distributionManagement>

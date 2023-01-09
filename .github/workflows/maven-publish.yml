@@ -28,12 +28,7 @@ jobs:
  
 
     - name: Deploy to sandbox via rsync
-      uses: trendyminds/github-actions-rsync@master
-      with:
-          RSYNC_OPTIONS: -avzr --delete --exclude node_modules --exclude '.git*'
-          RSYNC_TARGET: /var/release
-          RSYNC_SOURCE: /src/public/
-      
+      uses: AEnterprise/rsync-deploy@v1.0
         
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}

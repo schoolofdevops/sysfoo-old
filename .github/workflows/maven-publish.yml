@@ -32,22 +32,10 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: artifacts
-    - name: Stop Tomcat   
-      run: |
-        sudo -i 
-        cd /opt/tomcat/apache-tomcat-10.1.4/bin
-        pwd
-        ./shutdown.sh
-    #- name: Delete old artifacts
-    # run: rm -rf /opt/tomcat/apache-tomcat-10.1.4/webapps/*
-    - name: Copy new artifacts
-      run: cp *.war /opt/tomcat/apache-tomcat-10.1.4/webapps/
-    - name: Start Tomcat
-      run: |
-        sudo -i 
-        cd /opt/tomcat/apache-tomcat-10.1.4/bin
-        pwd
-        ./startup.sh
+    - name: Deploy WAR to Tomcat
+      run: mvn -B release:prepare release:perform -Dmaven.tomcat.url=http://54.78.228.30:8080/manager/text -Dmaven.tomcat.username=admin -Dmaven.tomcat.password=admin_password
+T
+
 
 
 

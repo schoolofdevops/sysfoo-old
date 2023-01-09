@@ -28,14 +28,27 @@ jobs:
       with:
           token: '${{ github.token }}'
           allowUpdates: true
-          artifacts: "${{ github.workspace }}/target/*.war" 
-          
+          artifacts: "${{ github.workspace }}/target/*.war"         
         
           
     - name: Publish Service
       run: mvn -f pom.xml -B clean install release:prepare release:perform
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Rollback Release
+      if: failure() && steps.release.outputs.id != ''
+      uses: author/action-rollback@stable
+      with:
+          # Using a known release ID
+          id: ${{ steps.release.id }}
+          # Using a tag name
+        
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        
+    
         
         
 

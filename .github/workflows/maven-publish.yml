@@ -33,7 +33,7 @@ jobs:
       with:
         name: artifacts
     - name: Stop Tomcat
-      run: pwd
+      run: sudo cd /opt/tomcat
     - name: Delete old artifacts
       run: rm -rf /opt/tomcat/apache-tomcat-10.1.4/webapps/*
     - name: Copy new artifacts

@@ -16,8 +16,6 @@
             <id>sysfoo</id>
             <name>deploy to tomcat</name>
             <url>http://54.78.228.30:8080/manager/text</url>
-            <username>admin</username>
-            <password>admin_password</password>
         </repository>
   </distributionManagement>
   <dependencies>

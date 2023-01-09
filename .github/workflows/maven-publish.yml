@@ -30,7 +30,7 @@ jobs:
           allowUpdates: true
           artifacts: "${{ github.workspace }}/target/*.war"   
     - name: Rollback Release
-      run: mvn -f pom.xml -B clean rollback.release
+      run: mvn rollback.release
         
           
     - name: Publish Service

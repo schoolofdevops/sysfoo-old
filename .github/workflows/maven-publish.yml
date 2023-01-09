@@ -20,13 +20,11 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-   
-    - name: Deploy to Server 1
-      uses: easingthemes/ssh-deploy@main
-      
     - name: rsync deployments
       uses: burnett01/rsync-deployments@5.2.1
-
+   
+    - name: Deploy to Server 1
+      uses: easingthemes/ssh-deploy@main    
         
       env:
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}   

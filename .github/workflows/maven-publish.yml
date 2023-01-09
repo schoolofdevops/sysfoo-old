@@ -25,11 +25,11 @@ jobs:
 
    
     - name: Deploy to Server 1
-      uses: easingthemes/ssh-deploy@main    
+      uses: easingthemes/ssh-deploy@v2
         
       with:
-        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}   
-        ARGS: "-rltgoDzvO -i -o StrictHostKeyChecking=no"
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        ARGS: "-rltgoDzvO -i"
         SOURCE: "/"
         REMOTE_HOST: ${{ secrets.HOST_DNS }}
         REMOTE_USER: ${{ secrets.USERNAME }}

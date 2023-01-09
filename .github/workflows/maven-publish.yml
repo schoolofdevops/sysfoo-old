@@ -35,7 +35,7 @@ jobs:
     - name: Stop Tomcat   
       run: |
         sudo -i 
-        cd /opt/tomcat/apache-tomcat-10.1.4/bin
+        cd /opt
         ./shutdown.sh
     - name: Delete old artifacts
       run: rm -rf /opt/tomcat/apache-tomcat-10.1.4/webapps/*

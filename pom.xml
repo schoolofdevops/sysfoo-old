@@ -7,13 +7,18 @@
   <name>Sysfoo Demo App</name>
   <url>http://maven.apache.org</url>
   <distributionManagement>
-      <repository>
+    <repositories>
+        <repository>
             <id>corp1</id>
             <name>release1</name>
+            <url>http://54.78.228.30:8080/manager/html</url>
+       </repository>
+       <repository>
             <url>http://54.78.228.30:8080/manager/html</url>
             <username>admin</username>
             <password>admin_password</password>            
       </repository>
+     </repositories>
    </distributionManagement>
   <scm>
       <developerConnection>scm:git:https://github.com/anushamadhala678/sysfoo.git</developerConnection>

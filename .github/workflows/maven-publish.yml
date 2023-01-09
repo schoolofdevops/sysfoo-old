@@ -21,7 +21,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: rsync
-      run: rsync -V
+      run: rsync --version
 
    
     - name: Deploy to Server 1

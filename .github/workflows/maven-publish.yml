@@ -24,7 +24,7 @@ jobs:
         commit-message: "Build artifacts"
         files: /sysfoobuildfiles/target/*
         branch: build-artifacts
-        base: feature/deploy
+        base: feature/tomcatdeploy
         repository: anushamadhala678/practicegit
 
   

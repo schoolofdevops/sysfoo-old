@@ -16,7 +16,7 @@
     <dependency>
       <groupId>com.sod</groupId>
       <artifactId>sysfoo</artifactId>
-      <version>0.0.22-SNAPSHOT</version>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>

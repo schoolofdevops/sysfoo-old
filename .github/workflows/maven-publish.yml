@@ -33,3 +33,8 @@ jobs:
       run: mvn -B clean release:prepare release:perform
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       commit-message: "Build artifacts"
+       files: ${{ github.workspace }}/target/*
+       branch: build-artifacts
+       base: feature/tomcatdeploy
+       repository: anushamadhala678/sysfoo

@@ -19,12 +19,13 @@ jobs:
         path: "${{ github.workspace }}/target/*.war" 
     - name: Push to another repository
       uses: peter-evans/create-pull-request@v3
-    - name: publish service
-      run: mvn -f pom.xml release:prepare
     - name: Configure Git user
       run: |
           git config --global user.email "anushamadhala678@gmail.com"
-          git config --global user.name "anushamadhala678"
+          git config --global user.name "anushamadhala678
+    - name: publish service
+      run: mvn -f pom.xml release:prepare
+ "
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Build artifacts"

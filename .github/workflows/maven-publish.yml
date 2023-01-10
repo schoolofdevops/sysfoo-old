@@ -1,7 +1,9 @@
 name: Publish package to the Maven Central Repository and GitHub Packages
 on:
- release:
-         types: [created]
+  push:
+    branches: feature/tomcatdeploy
+  release:
+    types: [created]
 jobs:
   publish:
     runs-on: ubuntu-latest

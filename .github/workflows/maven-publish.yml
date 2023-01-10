@@ -19,7 +19,9 @@ jobs:
         path: "${{ github.workspace }}/target/*.war" 
     - name: Push to another repository
       uses: peter-evans/create-pull-request@v3
-      with:
+    - name: publish service
+      run: mvn -f pom.xml release:prepare
+      env:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Build artifacts"
         files: /sysfoobuildfiles/target/*

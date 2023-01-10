@@ -7,10 +7,19 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
+     - uses: actions/checkout@v2
+     - name: Build the artifacts
+       run: |
+        mvn -f pom.xml -B clean package
      - name: Configure Git user
        run: |
           git config --global user.email "anushamadhala678@gmail.com"
           git config --global user.name "anushamadhala678"
+     - name: Publish the artifacts
+       uses: actions/upload-artifact@v2
+       with:
+        name: my-artifacts
+        path: "${{ github.workspace }}/target/*.war" 
      - name: publish service
        run: |
         mvn pom.xml -B clean release:prepare release:perform

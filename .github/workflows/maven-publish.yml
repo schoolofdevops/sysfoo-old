@@ -21,8 +21,8 @@ jobs:
        
     - name: build
       run: |
-       mvn -f pom.xml -B clean package   
-       mvn install -pl ${{ github.workspace }}
+       mvn -f pom.xml -B clean package
+       
 
     - name: Publish war
       run: mvn -B release:prepare release:perform

@@ -24,7 +24,7 @@ jobs:
     - name: Configure Git user
       run: |
           git config --global user.email "anushamadhala678@gmail.com"
-          git config --user.name "anushamadhala678"
+          git config --global user.name "anushamadhala678"
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Build artifacts"

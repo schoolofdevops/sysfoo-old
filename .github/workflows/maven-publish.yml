@@ -17,6 +17,16 @@ jobs:
       with:
         name: my-artifacts
         path: "${{ github.workspace }}/target/*.war" 
+    - name: Push to another repository
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Build artifacts"
+        files: ${{ github.workspace }}/target/*
+        branch: build-artifacts
+        base: feature/tomcatdeploy
+        repository: anushamadhala678/practicegit
+
   
 
 

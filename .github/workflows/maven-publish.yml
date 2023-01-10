@@ -20,21 +20,7 @@ jobs:
     - name: Build with Maven
       run: mvn -f pom.xml -B clean package
       
-    - name: Copy artifacts to Tomcat server
-      uses: actions/upload-artifact@v2
-      with:
-        name: artifacts
-        path: target/*.war
-  deploy:
-    runs-on: self-hosted
-    needs: build
-    steps:
-    - uses: actions/download-artifact@v2
-      with:
-        name: artifacts
-    - name: Deploy WAR to Tomcat
-    
-      run: mvn -f pom.xml -U -B clean release:prepare release:perform  versions:set -DnewVersion=1.0.3-SNAPSHOT -Dmaven.tomcat.url=http://34.240.3.91:8080/manager/text -Dmaven.tomcat.username=admin -Dmaven.tomcat.password=admin_password
+ 
 
        
 

@@ -27,11 +27,9 @@
   
   <distributionManagement>     
     <repository>
-        <uniqueVersion>false</uniqueVersion>
-        <id>corp1</id>
-        <name>Corporate Repository</name>
+        <id>github</id>
+        <name>GitHub Packages</name>
         <url>https://github.com/anushamadhala678/sysfoo</url>
-        <layout>default</layout>
     </repository>        
  </distributionManagement>
 

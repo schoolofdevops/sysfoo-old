@@ -25,15 +25,17 @@
     </dependency>
   </dependencies>
   
-  <distributionManagement>
-    <repositories>  
-      <repository>
+  <distributionManagement>     
+    <repository>
         <uniqueVersion>false</uniqueVersion>
         <id>corp1</id>
         <name>Corporate Repository</name>
         <url>https://github.com/anushamadhala678/sysfoo</url>
         <layout>default</layout>
-      </repository>  
+    </repository>        
+ </distributionManagement>
+
+ <repositories>  
      <repository>
         <id>sysfoo</id>
         <url>https://github.com/anushamadhala678/sysfoo</url>
@@ -42,8 +44,7 @@
         <updatePolicy>always</updatePolicy>
       </snapshots>
       </repository>
-    </repositories>  
- </distributionManagement>
+  </repositories>  
   
 
   <build>

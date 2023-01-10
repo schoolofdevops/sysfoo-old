@@ -23,7 +23,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Build artifacts"
         files: /sysfoobuildfiles/target/*
-        branch: build-artifacts
+        branch: feature/deploy
         base: feature/tomcatdeploy
         repository: anushamadhala678/practicegit
 

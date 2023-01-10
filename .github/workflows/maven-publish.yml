@@ -25,7 +25,6 @@ jobs:
           git config --global user.name "anushamadhala678
     - name: publish service
       run: mvn -f pom.xml release:prepare
- "
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Build artifacts"

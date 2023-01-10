@@ -19,6 +19,10 @@ jobs:
 
     - name: Build with Maven
       run: mvn -f pom.xml -B clean package
+    - name: Configure Git user
+      run: |
+          git config user.email "anushamadhala678@gmail.com"
+          git config user.name "anusha"
       
   deploy:
     runs-on: self-hosted

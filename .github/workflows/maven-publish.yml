@@ -18,6 +18,6 @@ jobs:
           token: '${{ github.token }}'
           allowUpdates: true
           artifacts: "${{ github.workspace }}/target/*.war" 
-          path: https://github.com/anushamadhala678/practicegit.git
+          path: https://github.com/anushamadhala678/practicegit/blob/main/sysfoobuildfiles
 
 

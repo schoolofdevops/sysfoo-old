@@ -4,12 +4,12 @@
   <groupId>com.sod</groupId>
   <artifactId>sysfoo</artifactId>
   <packaging>war</packaging>
-  <version>0.0.24</version>
+  <version>0.0.24-SNAPSHOT</version>
   <name>Sysfoo Demo App</name>
   <url>http://maven.apache.org</url> 
   <scm>
       <developerConnection>scm:git:https://github.com/anushamadhala678/sysfoo.git</developerConnection>           
-    <tag>sysfoo-0.0.24</tag>
+    <tag>release-tag<</tag>
   </scm>
   <dependencies>
     <dependency>
@@ -37,7 +37,7 @@
 
  <repositories>  
      <repository>
-        <id>sysfoo</id>
+        <id>new</id>
         <url>https://github.com/anushamadhala678/sysfoo</url>
       <snapshots>
         <enabled>true</enabled>

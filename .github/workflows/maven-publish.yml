@@ -30,6 +30,7 @@ jobs:
       run: |
        #git tag --delete sysfoo-0.0.24
        #git push --delete origin sysfoo-0.0.24
+       git pull --tags --force 
 
     - name: Publish war
       run: mvn -B clean release:prepare release:perform

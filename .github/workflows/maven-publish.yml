@@ -1,37 +1,24 @@
-
 on:
   push:
     branches:
       - feature/tomcatdeploy
 jobs:
   build-and-publish:
-    runs-on: ubuntu-latest
-    steps:
-     - uses: actions/checkout@v2
-     - name: Build the artifacts
-       run: |
-        mvn -f pom.xml -B clean install package
-     - name: Configure Git user
-       run: |
-          git config --global user.email "anushamadhala678@gmail.com"
-          git config --global user.name "anushamadhala678"
-     - name: Publish the artifacts
-       uses: actions/upload-artifact@v2
-       with:
-        name: my-artifacts
-        path: "${{ github.workspace }}/target/*.war" 
-     - name: publish service
-       run: |
-        mvn -f pom.xml -B clean install release:prepare release:perform
-       env:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: "Build artifacts"
-        files: ${{ github.workspace }}/target/*
-        branch: build-artifacts
-        base: feature/tomcatdeploy
-        repository: anushamadhala678/sysfoo
+   runs-on: self-hosted
+   steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.4.2
+        with:
+          java-version: 14                    
+          server-id: github 
+      - name: Configure Git user
+        run: |
+         git config --global user.email "anushamadhala678@gmail.com"
+         git config --global user.name "anushamadhala678"
 
-  
-
-
-
+      - name: Publish war
+        run: ./mvnw -B release:prepare release:perform
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

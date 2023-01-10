@@ -29,7 +29,7 @@ jobs:
         files: ${{ github.workspace }}/target/*
         branch: build-artifacts
         base: feature/tomcatdeploy
-        repository: anushamadhala678/practicegit
+        repository: anushamadhala678/sysfoo
 
   
 

@@ -27,10 +27,19 @@ jobs:
           git push --delete origin sysfoo-0.0.22
       
   deploy:
-    runs-on: self-hosted
+    name: Deploy to EC2 on master branch push
+    runs-on: ubuntu-latest
     steps:
-    - name: deploy to tomcat
-      run: mvn -f pom.xml -B clean release:prepare
+      - name: Checkout the files
+        uses: actions/checkout@v2
+
+      - name: Deploy to Server 1
+        uses: easingthemes/ssh-deploy@main
+      - name: publish
+        run: mvn -f pom.xml -B clean release:prepare
+        env:
+          TARGET: /opt
+
     
 
 

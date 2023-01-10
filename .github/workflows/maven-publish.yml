@@ -20,25 +20,10 @@ jobs:
     - name: Build with Maven
       run: mvn -f pom.xml -B clean package
       
-  deploy:
-    name: Deploy to EC2 on master branch push
-    runs-on: ubuntu-latest
-    environment: Dev
-    steps:
-      - name: Checkout the files
-        uses: actions/checkout@v2
+
         
 
-      - name: Deploy to Server 1
-        uses: easingthemes/ssh-deploy@main
-      - name: publish
-        run: mvn -f pom.xml -B clean release:prepare
-        
-        env:
-          SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
-          REMOTE_HOST: ${ { secrets.HOST_DNS }}
-          REMOTE_USER: ${ { secrets.USERNAME }}
-          TARGET: ${ { secrets.TARGET_DIR }}
+
 
     
 

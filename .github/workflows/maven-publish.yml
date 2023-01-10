@@ -42,7 +42,7 @@ jobs:
          FOLDER : ${{ github.workspace }}/target/*
          TARGET_FOLDER: https://github.com/anushamadhala678/sysfoo
          CLEAN: true 
-    - name: rollback
+ 
   
   deploy_release:
          runs-on: ubuntu-latest

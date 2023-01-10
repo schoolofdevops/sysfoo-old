@@ -39,13 +39,5 @@ jobs:
          TARGET_FOLDER: https://github.com/anushamadhala678/sysfoo
          CLEAN: true 
  
-  
-  deploy_release:
-         runs-on: ubuntu-latest
-         steps: 
-          - id: latest
-            uses: thebritican/fetch-latest-release@v1.0.3
-            with:
-              github_token: ${{ secrets.GITHUB_TOKEN }}
 
 

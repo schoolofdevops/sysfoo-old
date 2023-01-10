@@ -31,6 +31,8 @@
         <id>corp1</id>
         <name>Corporate Repository</name>
         <url>https://github.com/anushamadhala678/sysfoo</url>
+        <username>anushamadhala678</username>
+        <password>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</password>
         <layout>default</layout>
     </repository>        
  </distributionManagement>

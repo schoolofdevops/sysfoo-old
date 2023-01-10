@@ -42,7 +42,7 @@
         <updatePolicy>always</updatePolicy>
       </snapshots>
       </repository>
-    <repositories>  
+    </repositories>  
  </distributionManagement>
   
 

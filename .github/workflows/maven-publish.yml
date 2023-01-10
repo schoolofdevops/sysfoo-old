@@ -20,6 +20,6 @@ jobs:
        git config --global user.name "anushamadhala678"
 
     - name: Publish war
-      run: ./mvnw -B release:prepare release:perform
+      run: mvn -B release:prepare release:perform
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

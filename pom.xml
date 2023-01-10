@@ -6,6 +6,9 @@
   <version>0.0.22-SNAPSHOT</version>
   <name>Sysfoo Demo App</name>
   <url>http://maven.apache.org</url> 
+  <scm>
+    <developerConnection>scm:git:origin</developerConnection>
+  </scm>
     
 
   <dependencies>

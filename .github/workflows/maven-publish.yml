@@ -21,9 +21,7 @@ jobs:
     - name: Configure Git user
       run: |
        git config --global user.email "anushamadhala678@gmail.com"
-       git config --global user.name "anushamadhala678"
-
-        
+       git config --global user.name "anushamadhala678"  
      
        
     - name: build
@@ -44,5 +42,11 @@ jobs:
          FOLDER : ${{ github.workspace }}/target/*
          TARGET_FOLDER: https://github.com/anushamadhala678/sysfoo
          CLEAN: true 
+    - name: Rollback Release
+      if: failure() && steps.release.outputs.id != ''   
+      uses: author/action-rollback@stable
+    - name: Maven rollback
+      run: mvn release:rollback
+
 
 

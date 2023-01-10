@@ -20,9 +20,14 @@ jobs:
     - name: Build with Maven
       run: mvn -f pom.xml -B clean package
       
- 
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - name: deploy to tomcat
+      run: mvn -f pom.xml clean release:prepare
+    
 
-       
+
 
 
 

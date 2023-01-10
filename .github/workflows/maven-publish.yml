@@ -18,15 +18,18 @@ jobs:
       run: |
        git config --global user.email "anushamadhala678@gmail.com"
        git config --global user.name "anushamadhala678"
-       git tag --delete sysfoo-0.0.24
-       git push --delete origin sysfoo-0.0.24
+
         
      
        
     - name: build
       run: |
        mvn -f pom.xml -B clean package
-       
+     
+    - name: deleting tags
+      run: |
+       git tag --delete sysfoo-0.0.24
+       git push --delete origin sysfoo-0.0.24
 
     - name: Publish war
       run: mvn -B clean release:prepare release:perform

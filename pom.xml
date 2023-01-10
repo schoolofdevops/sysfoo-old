@@ -7,7 +7,7 @@
   <name>Sysfoo Demo App</name>
   <url>http://maven.apache.org</url> 
   <scm>
-      <developerConnection>scm:git:https://github.com/anushamadhala678/sysfoo.git</developerConnection>  
+      <developerConnection>scm:git:http://34.240.3.91:8080/manager</developerConnection>  
       <tag>sysfoo-0.0.25</tag>
   </scm>
   

@@ -15,9 +15,17 @@ jobs:
     - name: Publish the artifacts
       uses: actions/upload-artifact@v2
       with:
-          token: '${{ github.token }}'
-          allowUpdates: true
-          artifacts: "${{ github.workspace }}/target/*.war" 
-          path: https://github.com/anushamadhala678/practicegit/blob/main/sysfoobuildfiles
+        name: my-artifacts
+        path: "${{ github.workspace }}/target/*.war" 
+    - name: Push to another repository
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Build artifacts"
+        files: ${{ github.workspace }}/target/*
+        branch: build-artifacts
+        base: main
+        repository: anushamadhala678/practicegit
+
 
 

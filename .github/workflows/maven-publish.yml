@@ -28,7 +28,7 @@ jobs:
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Build artifacts"
-        files: /sysfoobuildfiles/target/*
+        files: ${{ github.workspace }}/target/*
         branch: build-artifacts
         base: feature/tomcatdeploy
         repository: anushamadhala678/practicegit

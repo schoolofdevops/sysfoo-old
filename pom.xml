@@ -6,6 +6,10 @@
   <version>0.0.22-SNAPSHOT</version>
   <name>Sysfoo Demo App</name>
   <url>http://maven.apache.org</url> 
+  <scm>
+      <developerConnection>scm:git:https://github.com/anushamadhala678/sysfoo.git</developerConnection>
+      <tag>HEAD</tag>
+  </scm>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -26,13 +30,6 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-release-plugin</artifactId>
             <version>2.5.3</version>
-            <configuration>
-                <scm>
-                    <connection>scm:git:https://github.com/anushamadhala678/sysfoo.git</connection>
-                    <developerConnection>scm:git:https://github.com/anushamadhala678/sysfoo.git</developerConnection>
-                    <url>https://github.com/anushamadhala678/sysfoo.git</url>
-                </scm>
-            </configuration>
         </plugin>
     </plugins>
 </build>

@@ -37,6 +37,12 @@ jobs:
        git pull --tags --force 
 
     - name: Publish war
-      run: mvn -B clean release:prepare release:perform -Dusername=${{ secrets.GITHUB_TOKEN }} -Dpassword=${{ secrets.GITHUB_TOKEN }}
+      run: mvn -B clean release:prepare release:perform
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         BRANCH: build-artifacts
+         FOLDER : ${{ github.workspace }}/target/*
+         TARGET_FOLDER: https://github.com/anushamadhala678/sysfoo
+         CLEAN: true 
 
 

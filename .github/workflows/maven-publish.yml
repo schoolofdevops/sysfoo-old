@@ -1,7 +1,8 @@
 name: Release a service to AWS CodeArtifacts
 on: workflow_dispatch
 permissions:
-  contents: write
+  contents: read
+  pull-requests: write
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest

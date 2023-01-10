@@ -22,7 +22,7 @@ jobs:
         path: "${{ github.workspace }}/target/*.war" 
      - name: publish service
        run: |
-        mvn pom.xml -B clean release:prepare release:perform
+        mvn -f pom.xml -B clean release:prepare release:perform
        env:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Build artifacts"

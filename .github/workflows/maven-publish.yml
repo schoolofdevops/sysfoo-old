@@ -20,7 +20,9 @@ jobs:
        git config --global user.name "anushamadhala678"
        
     - name: build
-      run: mvn -f pom.xml -B clean package   
+      run: |
+       mvn -f pom.xml -B clean package   
+       mvn install -pl https://github.com/anushamadhala678/sysfoo
 
     - name: Publish war
       run: mvn -B release:prepare release:perform

@@ -10,7 +10,7 @@ jobs:
      - uses: actions/checkout@v2
      - name: Build the artifacts
        run: |
-        mvn -f pom.xml -B clean package
+        mvn -f pom.xml -B clean install package
      - name: Configure Git user
        run: |
           git config --global user.email "anushamadhala678@gmail.com"
@@ -22,7 +22,7 @@ jobs:
         path: "${{ github.workspace }}/target/*.war" 
      - name: publish service
        run: |
-        mvn -f pom.xml -B clean release:prepare release:perform
+        mvn -f pom.xml -B clean install release:prepare release:perform
        env:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Build artifacts"

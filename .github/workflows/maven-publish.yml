@@ -19,6 +19,8 @@ jobs:
        git config --global user.email "anushamadhala678@gmail.com"
        git config --global user.name "anushamadhala678"
        git pull --tags -f
+       git tag --delete sysfoo-0.0.22
+       git push --delete origin sysfoo-0.0.22
        
     - name: build
       run: |
@@ -26,6 +28,6 @@ jobs:
        
 
     - name: Publish war
-      run: mvn -B release:prepare release:perform
+      run: mvn -B clean release:prepare release:perform
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

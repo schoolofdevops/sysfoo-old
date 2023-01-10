@@ -1,44 +1,21 @@
-name: Release a service to AWS CodeArtifacts
-on: workflow_dispatch
-permissions:
-  contents: read
-  pull-requests: write
+name: Publish package to the Maven Central Repository and GitHub Packages
+on:
+  release:
+    types: [created]
 jobs:
-  build-and-publish:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
-    - name: Checkout project
-      uses: actions/checkout@v3
-    - name: Setup Java JDK
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'                    
-        server-id: github 
-        distribution: 'temurin'
-    - name: Configure Git user
-      run: |
-       git config --global user.email "anushamadhala678@gmail.com"
-       git config --global user.name "anushamadhala678"  
-     
-       
-    - name: build
-      run: |
-       mvn -f pom.xml -B clean package
-     
-    - name: deleting tags
-      run: |
-       #git tag --delete sysfoo-0.0.24
-       #git push --delete origin sysfoo-0.0.24
-       git pull --tags --force 
-
-    - name: Publish war
-      run: mvn -B clean release:prepare release:perform
-      env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         BRANCH: build-artifacts
-         FOLDER : ${{ github.workspace }}/target/*
-         TARGET_FOLDER: https://github.com/anushamadhala678/sysfoo
-         CLEAN: true 
- 
-
-
+      - uses: actions/checkout@v3   
+      - name: Set up Java for publishing to GitHub Packages
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Publish to GitHub Packages
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

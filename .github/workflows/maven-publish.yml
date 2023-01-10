@@ -24,7 +24,7 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: deploy to tomcat
-      run: mvn -f pom.xml clean release:prepare
+      run: mvn -f pom.xml -B clean release:prepare
     
 
 

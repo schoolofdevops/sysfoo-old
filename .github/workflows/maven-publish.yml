@@ -1,23 +1,23 @@
-name: Publish package to the Maven Central Repository and GitHub Packages
+name: Release
+
 on:
   push:
-    branches: feature/tomcatdeploy
-  release:
-    types: [created]
+    branches:
+      - feature/tomcatdeploy
+
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+
     steps:
-      - uses: actions/checkout@v3   
-      - name: Set up Java for publishing to GitHub Packages
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'adopt'
-      - name: Publish to GitHub Packages
-        run: mvn --batch-mode deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and release
+      run: mvn release:prepare release:perform -B
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Rollback release
+      if: failure()
+      run: mvn release:rollback -B

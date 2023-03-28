@@ -19,14 +19,19 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
-      - run:
-          name: Build
-          command: mvn -B -DskipTests clean package
+      - restore_cache:
+          keys:
+           - v1-dependencies-{{checksum 'pom.xml'}}
+           - v1-dependencies-
       # Then run your tests!
-      - run:
-          name: Test
-          command: mvn test
+      - run: mvn dependency:go-offline
+         
+      - save_cache:
+         paths:
+          - ~/.m2
+         key: v1-dependencies-{{checksum 'pom.xml'}} 
 
+      - run: mvn integration-test
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -34,4 +39,3 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
-

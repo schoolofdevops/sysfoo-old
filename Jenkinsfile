@@ -1,5 +1,8 @@
 pipeline {
-  agent docker
+  docker {
+        label 'docker'
+        image 'python:3.7'
+    }
   tools {
     maven 'MyMaven'
   }

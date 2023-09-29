@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'compile maven app'
-        echo "Ashish Gupta"
+        echo 'Ashish Gupta'
         sh 'mvn compile'
       }
     }
@@ -20,6 +20,7 @@ pipeline {
       steps {
         echo 'package maven app'
         sh 'mvn package -DskipTests'
+        archiveArtifacts 'target/*.war'
       }
     }
 

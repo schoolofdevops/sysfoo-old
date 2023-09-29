@@ -55,7 +55,7 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<span class="image main"><img src="images/sodc_banner.jpg" alt="" /></span>
-								<p>School of Devops is a leading provider of devops trainings and offers variety of courses which focus on Infrastrucrture as a Code, Container and Docker, Continuous Delivery, Cloud. To learn more visit http://www.schoolofdevops.com.</p>
+								<p>School of Devops 2 is a leading provider of devops trainings and offers variety of courses which focus on Infrastrucrture as a Code, Container and Docker, Continuous Delivery, Cloud. To learn more visit http://www.schoolofdevops.com.</p>
 							</article>
 					</div>
 

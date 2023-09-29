@@ -2,17 +2,22 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      steps {
-        echo 'compile maven app'
-        echo 'Ashish Gupta'
-        sh 'mvn compile'
-      }
-    }
+      parallel {
+        stage('build') {
+          steps {
+            echo 'compile maven app'
+            echo 'Ashish Gupta'
+            sh 'mvn compile'
+          }
+        }
 
-    stage('test') {
-      steps {
-        echo 'test maven app'
-        sh 'mvn clean test'
+        stage('test') {
+          steps {
+            echo 'Testing....'
+            sh 'mvn clean test'
+          }
+        }
+
       }
     }
 

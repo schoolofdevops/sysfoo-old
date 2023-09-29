@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'compile maven app'
-        echo "Ashish"
+        echo "Ashish Gupta"
         sh 'mvn compile'
       }
     }

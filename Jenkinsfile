@@ -1,7 +1,9 @@
 pipeline {
-  agent any
-  tools {
-    maven 'MyMaven'
+  agent {
+    docker {
+      image 'maven:3.6.3-jdk-11-slim'
+    }
+
   }
   stages {
     stage('build') {
@@ -11,7 +13,6 @@ pipeline {
             echo 'compile maven app'
             echo 'Ashish Gupta 4'
             sh 'mvn compile'
-            
           }
         }
 
@@ -34,5 +35,7 @@ pipeline {
     }
 
   }
-  
+  tools {
+    maven 'MyMaven'
+  }
 }

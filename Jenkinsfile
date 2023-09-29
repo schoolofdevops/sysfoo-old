@@ -2,13 +2,14 @@ pipeline{
     agent any
 
     tools{
-        maven 'MyMaven'
+        maven 'Maven 3.6.3'
     }
-
+    
     stages{
         stage('build'){
             steps{
                 echo 'compile maven app'
+                echo 'Ashish'
                 sh 'mvn compile'
             }
         }
@@ -24,5 +25,5 @@ pipeline{
                 sh 'mvn package -DskipTests'
             }
         }
-    }
+}
 }

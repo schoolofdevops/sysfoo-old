@@ -29,48 +29,46 @@ pipeline {
         sh 'mvn clean test'
       }
     }
-    parallel {
+
+    stage('package war and docker')
+    {
+      parallel {
         when {
-        branch 'master'
-      }
-
-       stage('package') {
-    
-      
-      agent {
-        docker {
-          image 'maven:3.6.3-jdk-11-slim'
+          branch 'master'
         }
+        stage('package') {
+          agent {
+            docker {
+              image 'maven:3.6.3-jdk-11-slim'
+            }
 
-      }
-      steps {
-        echo 'Packaging'
-        sh 'mvn package -DskipTests'
-        archiveArtifacts 'target/*.war'
-      }
-    }
-
-    stage('Docker BnP') {
-      when {
-        branch 'master'
-      }
-      agent any
-      steps {
-        script {
-          docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
-            def dockerImage = docker.build("ietashish/sysfoo:v${env.BUILD_ID}", "./")
-            dockerImage.push()
-            dockerImage.push("latest")
-            dockerImage.push("dev")
+          }
+          steps {
+            echo 'Packaging'
+            sh 'mvn package -DskipTests'
+            archiveArtifacts 'target/*.war'
           }
         }
 
+        stage('Docker BnP') {
+          when {
+            branch 'master'
+          }
+          agent any
+          steps {
+            script {
+              docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
+                def dockerImage = docker.build("ietashish/sysfoo:v${env.BUILD_ID}", "./")
+                dockerImage.push()
+                dockerImage.push("latest")
+                dockerImage.push("dev")
+              }
+            }
+
+          }
+        }
       }
     }
-    }
-    
-   
-
   }
   tools {
     maven 'MyMaven'

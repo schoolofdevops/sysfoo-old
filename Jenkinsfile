@@ -32,10 +32,10 @@ pipeline {
 
     stage('package war and docker')
     {
-      parallel {
-        when {
+      when {
           branch 'master'
         }
+      parallel {
         stage('package') {
           agent {
             docker {

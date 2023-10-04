@@ -29,11 +29,13 @@ pipeline {
         sh 'mvn clean test'
       }
     }
-
-    stage('package') {
-      when {
+    parallel {
+        when {
         branch 'master'
       }
+
+       stage('package') {
+    
       
       agent {
         docker {
@@ -65,6 +67,9 @@ pipeline {
 
       }
     }
+    }
+    
+   
 
   }
   tools {

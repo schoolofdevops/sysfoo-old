@@ -11,7 +11,6 @@ pipeline {
         echo 'compile maven app'
         echo 'Ashish Gupta 4'
         sh 'mvn compile'
-        
       }
     }
 
@@ -19,7 +18,6 @@ pipeline {
       steps {
         echo 'Testing'
         sh 'mvn clean test'
-        
       }
     }
 
@@ -28,6 +26,21 @@ pipeline {
         echo 'Packaging'
         sh 'mvn package -DskipTests'
         archiveArtifacts 'target/*.war'
+      }
+    }
+
+    stage('Docker BnP') {
+      agent any
+      steps {
+        script {
+          docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
+            def dockerImage = docker.build("ietashish/sysfoo:v${env.BUILD_ID}", "./")
+            dockerImage.push()
+            dockerImage.push("latest")
+            dockerImage.push("dev")
+          }
+        }
+
       }
     }
 

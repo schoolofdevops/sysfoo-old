@@ -2,6 +2,7 @@ pipeline {
   agent none
   stages {
     stage('build') {
+      
       agent {
         docker {
           image 'maven:3.6.3-jdk-11-slim'
@@ -9,6 +10,7 @@ pipeline {
 
       }
       steps {
+        echo env.BRANCH_NAME
         echo 'compile maven app'
         echo 'Ashish Gupta 4'
         sh 'mvn compile'

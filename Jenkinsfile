@@ -11,7 +11,7 @@ pipeline {
         echo 'compile maven app'
         echo 'Ashish Gupta 4'
         sh 'mvn compile'
-        sleep 100
+        
       }
     }
 

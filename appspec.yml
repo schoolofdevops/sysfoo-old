@@ -1,0 +1,17 @@
+version: 0.0
+
+os: linux
+
+files:
+  - source: target/sysfoo.war
+    destination: /tmp
+
+hooks:
+  ApplicationStop:
+    - location: scripts/stop-process.sh
+      timeout: 180
+      runas: ec2-user
+  ApplicationStart:
+    - location: scripts/start-process.sh
+      timeout: 180
+      runas: ec2-user
